@@ -4,10 +4,10 @@
 - [x] 신경망 학습에서는 현재의 상태를 `하나의 지표`로 표현
 - [x] `그 지표`를 가장 좋게 만들어주는 가중치 매개변수의 값을 탐색하는 것
 - [x] 신경망 학습에서 사용하는 지표는 **손실 함수**
-- [x] `일반적으로 평균 제곱 오차`와 `교차 엔트로피 오차`를 사용
+- [x] `일반적으로 평균 제곱 오차(MSE)`와 `교차 엔트로피 오차(CEE)`를 사용
 - [x] 신경망 학습에서는 최적의 매개변수를 탐색할 때, Loss Function을 최대한 작게 하는 값을 찾음
 - [x] 이때 변수의 기울기 값(=미분값)을 계산하고, 이를 토대로 값을 갱신하는 과정을 반복
-
+- [x] 정답을 맞출 경우 손실 함수의 값이 작고, 정답을 못 맞출 경우 손실 함수의 값이 크다.
 
 #### 평균 제곱 오차(Mean Squared Error: MSE)
 
@@ -17,20 +17,38 @@
 
 ![image](https://user-images.githubusercontent.com/83503188/161380735-6fd95089-25af-4815-962d-a88d16c8402a.png)
 
-> 	`원-핫 인코딩`
+> `원-핫 인코딩`
 > 
->	한 원소만 1로 하고 그 외는 0으로 나타내는 표기법
+> 한 원소만 1로 하고 그 외는 0으로 나타내는 표기법
 
 #### 교차 엔트로피 오차(Cross Entropy Error:CEE)
 
 ![image](https://user-images.githubusercontent.com/83503188/161380738-5b97b9b3-0681-45e7-9e2d-e76c6812c3cb.png)
 
 ### 미니배치 학습
+- [x] 모든 데이터를 사용하여 학습을 진행하기엔 너무 많은 시간과 자원이 소모되므로, 일부 데이터만을 사용하여 학습을 진행하는 학습 방법
 - [x] 훈련 데이터에 대한 손실 함수의 값을 구하고, 그 값을 최대한 줄여주는 매개변수를 찾음
 - [x] 훈련 데이터가 100개 있으면 그로부터 계산한 100개의 손실 함수 값들의 합을 지표로 삼음
 
-
+```
+train_size = x_train.shape[0]
+        batch_size = 10
+        batch_mask = np.random.choice(train_size, batch_size)
+        x_batch = x_train[batch_mask]
+        t_batch = t_train[batch_mask]
+        
+    def cross_entropy_error(y, t):
+        If y.ndim == 1:
+          t = t.reshape(1, t.size)
+          y = y.reshape(1, y.size)
+        batch_size = y.shape[0]
+        delta = 1e-7
+        return –np.sum(t * np.log(y + delta)) / batch_size
+```
 ![image](https://user-images.githubusercontent.com/83503188/161380741-9ec4e221-d1c6-4c8d-bab3-bac2ea37ec7c.png)
+
+![image](https://user-images.githubusercontent.com/83503188/162561521-8c831fb6-e10b-4503-8f62-908ce42317b4.png)
+
 
 - [x] 마지막에 N으로 나누어 정규화
 - [x] N으로 나눔으로써 `평균 손실 함수`를 구하는 것
@@ -40,10 +58,16 @@
 
 ### 수치 미분
 - [x] 경사법에서는 기울기 값을 기준으로 나아갈 방향을 정함
+- [x] 매개변수의 미분을 계산하고 매개변수를 서서히 갱신
+  - [x] 미분 값 음수: 매개변수를 양의 방향으로 갱신
+  - [x] 미분 값 양수: 매개변수를 음의 방향으로 갱신
+  - [x] 미분 값이 0이면: 매개변수를 갱신 하지 못함
+- [x] 정확도를 지표를 삼지 않고 손실 함수의 값을 지표로 삼는 이유는 정확도는 계단함수 모양을 하고 있으므로 대부분의 장소에서 0이 되기 때문이다.
 
 
 #### 기울기
 - [x] 모든 변수의 편미분을 벡터로 정리한 것을 기울기라고 한다.
+- [x] **기울기가 가리키는 쪽은 각 장소에서 함수의 출력 값을 가장 크게 줄이는 방향**이다.
 
 
 #### 경사 하강법
