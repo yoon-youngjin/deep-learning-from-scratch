@@ -5,6 +5,19 @@
 > 
 > 출력값은 0 또는 1
 
+![image](https://user-images.githubusercontent.com/83503188/162928622-229230c7-5453-444c-a39a-5ce432b5752d.png)
+
+> x1, x2를 입력 신호
+> 
+> y는 출력 신호
+> 
+> w1, w2는 가중치 
+
+- 그림의 원을 **뉴런** 혹은 **노드** 
+- 입력 신호가 뉴런에 보내질 때는 각각 고유한 **가중치** 가 곱해짐
+  - 가중치가 클수록 해당 신호가 더 중요함을 의미 
+
+
 ### AND GATE
 
 ![image](https://user-images.githubusercontent.com/83503188/160584122-d9073bff-e3e1-404f-ad23-80505c27acf7.png)
