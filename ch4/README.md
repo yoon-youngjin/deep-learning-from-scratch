@@ -57,13 +57,13 @@ batch_mask = np.random.choice(train_size, batch_size)
 x_batch = x_train[batch_mask]
 t_batch = t_train[batch_mask]
         
-    def cross_entropy_error(y, t):
-        If y.ndim == 1:
-          t = t.reshape(1, t.size)
-          y = y.reshape(1, y.size)
-        batch_size = y.shape[0]
-        delta = 1e-7
-        return –np.sum(t * np.log(y + delta)) / batch_size
+def cross_entropy_error(y, t):
+    If y.ndim == 1:
+    t = t.reshape(1, t.size)
+    y = y.reshape(1, y.size) 
+    batch_size = y.shape[0]
+    delta = 1e-7
+    return –np.sum(t * np.log(y + delta)) / batch_size
 ```
 ![image](https://user-images.githubusercontent.com/83503188/161380741-9ec4e221-d1c6-4c8d-bab3-bac2ea37ec7c.png)
 
