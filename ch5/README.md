@@ -41,7 +41,7 @@
 
 
 
-- [x] 덧셈 노드의 여건파는 입력 값을 그대로 흘려보낸다.
+- [x] 덧셈 노드의 역전파는 입력 값을 그대로 흘려보낸다.
 
 ![image](https://user-images.githubusercontent.com/83503188/161944070-54fe7d31-57e8-4885-ae58-ceb6e00301ca.png)
 
