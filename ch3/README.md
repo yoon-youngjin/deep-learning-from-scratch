@@ -24,7 +24,7 @@
 
 ![image](https://user-images.githubusercontent.com/83503188/161228795-465f68d5-c3b2-44e0-912d-407e14779be2.png)
 
-- [x] h(x)라는 함수, 입력 신호의 총합을 출력 신호로 변환하는 함수를 일반적으로 **활성화 함수(activation function)**라 함
+- [x] h(x)라는 함수, 입력 신호의 총합을 출력 신호로 변환하는 함수를 일반적으로 **활성화 함수(activation function)** 라 함
 
 ![image](https://user-images.githubusercontent.com/83503188/161227791-9281b50d-173d-4f74-9266-80a28518d7d8.png)
 
@@ -48,13 +48,18 @@
 - 또한, 중요한 공통점으로 둘 모두는 비선형 함수 
   > 출력이 입력의 상수배만큼 변하는 함수를 **선형함수**라고 하고, 선형이 아닌 함수가 비선형 함수
 
+> 신경망에서는 활성화 함수로 선형 함수를 쓰면 안된다 
+> 
+> 선형 함수를 이용하면 신경망의 층을 깊게 하는 의미가 없어지기 때문에
+
+
 #### ReLU 함수
 - 입력이 0을 넘으면 그 입력을 그대로 출력하고, 0 이하이면 0을 출력하는 함수
 
-![image](https://user-images.githubusercontent.com/83503188/161227811-9a2fe38b-b2bb-47eb-bdf9-cb640e4d0d08.png)
-
-![image](https://user-images.githubusercontent.com/83503188/161227823-08df86c2-4390-49ae-8287-c9b9f24711f9.png)
-
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/83503188/161227811-9a2fe38b-b2bb-47eb-bdf9-cb640e4d0d08.png" width="400px" height="250px"/>
+  <img src="https://user-images.githubusercontent.com/83503188/161227823-08df86c2-4390-49ae-8287-c9b9f24711f9.png" width="400px" height="250px"/>
+</p>
 
 #### 신경망에서의 행렬 곱
 ![image](https://user-images.githubusercontent.com/83503188/161227839-6e74134d-bb8d-47b6-aafa-b6c5de2ffe18.png)
