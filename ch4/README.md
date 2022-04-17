@@ -33,7 +33,7 @@
 
 ![image](https://user-images.githubusercontent.com/83503188/161380730-167d27db-a931-4216-8340-871f0cc1caf2.png)
 
-- yk는 신경망의 출력, 사는 정답 레이블, k는 데이터의 차원 수
+- yk는 신경망의 출력, tk는 정답 레이블, k는 데이터의 차원 수
 
 ![image](https://user-images.githubusercontent.com/83503188/161380735-6fd95089-25af-4815-962d-a88d16c8402a.png)
 
