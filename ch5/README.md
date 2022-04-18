@@ -68,7 +68,7 @@
 ![image](https://user-images.githubusercontent.com/83503188/161944092-3e47b86f-dec7-4a75-8439-a98bb1587681.png)
 
 
-- [x] 사과 쇼핑의 예
+- 사과 쇼핑의 예
 
 ![image](https://user-images.githubusercontent.com/83503188/161944109-da5df4e4-8e2c-4585-9c5c-d538b203f096.png)
 
